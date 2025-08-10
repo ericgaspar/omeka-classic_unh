@@ -11,8 +11,8 @@ source /usr/share/yunohost/helpers
 # INITIALIZE AND STORE SETTINGS
 #=================================================
 
-ynh_app_setting_set --key=php_upload_max_filesize --value=50M
-ynh_app_setting_set --key=php_post_max_size --value=50M
+ynh_app_setting_set --key=php_upload_max_filesize --value=100M
+ynh_app_setting_set --key=php_post_max_size --value=100M
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -21,6 +21,8 @@ ynh_script_progression "Setting up source files..."
 
 # Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
+
+chmod -R 755 "$install_dir"
 
 #=================================================
 # APP INITIAL CONFIGURATION
