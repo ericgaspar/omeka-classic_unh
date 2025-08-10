@@ -20,7 +20,7 @@ ynh_restore "$install_dir"
 #=================================================
 ynh_script_progression "Restoring the data directory..."
 
-ynh_restore "$data_dir"
+#ynh_restore "$data_dir"
 
 #=================================================
 # RESTORE THE MYSQL DATABASE
